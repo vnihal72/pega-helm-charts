@@ -3,7 +3,7 @@ default: test
 test:secrets
 
 NAMESPACE := <YOUR_NAMESPACE>
-HIGH_SECURITY_ENABLED := <FIPS_MODE>
+HIGH_SECURITY_ENABLED := <HIGH_SECURITY_ENABLED>
 
 CLUSTERING_SERVICE_IMAGE := cloudservices-docker-dev-local.bin.pega.io/platform/clustering-service:2.0.0-SNAPSHOT
 ENC_KEYSTORE_PASSWORD := mystorePwd
