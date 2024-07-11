@@ -179,14 +179,12 @@ data:
 {{ if (eq (include "isHzEncryptionEnabled" .) "true") }}
   HZ_SSL_ENABLED: "true"
   HZ_SSL_PROTOCOL: "TLS"
-  {{ if (eq (include "isHzHighSecurityEnabled" .) "true") }}
-  HZ_FIPS_ENABLED: "true"
-  HZ_SSL_KEY_STORE_NAME: "{{ .Values.hazelcast.encryption.keyStoreName }}.bcfks"
-  HZ_SSL_TRUST_STORE_NAME: "{{ .Values.hazelcast.encryption.trustStoreName }}.bcfks"
-  HZ_SSL_ALGO: "PKIX"
-  {{- else }}
   HZ_SSL_KEY_STORE_NAME: "{{ .Values.hazelcast.encryption.keyStoreName }}.jks"
   HZ_SSL_TRUST_STORE_NAME: "{{ .Values.hazelcast.encryption.trustStoreName }}.jks"
+  {{ if (eq (include "isHzHighSecurityEnabled" .) "true") }}
+  HZ_HIGH_SECURITY_ENABLED: "true"
+  HZ_SSL_ALGO: "PKIX"
+  {{- else }}
   HZ_SSL_ALGO: "SunX509"
   {{- end }}
 {{- end }}

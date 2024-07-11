@@ -12,13 +12,10 @@ data:
   MIN_CLUSTER_SIZE: {{ .Values.replicas | quote }}
 {{- if (eq (include "isEncryptionEnabled" .) "true") }}
   ENCRYPTION_ENABLED: {{ true | quote }}
-{{- if (eq (include "isHighSecurityEnabled" .) "true") }}
-  HIGH_SECURITY_ENABLED: {{ true | quote }}
-  ENCRYPTION_KEYSTORE_NAME: {{ .Values.encryption.keyStoreName }}.bcfks
-  ENCRYPTION_TRUSTSTORE_NAME: {{ .Values.encryption.trustStoreName }}.bcfks
-{{- else }}
   ENCRYPTION_KEYSTORE_NAME: {{ .Values.encryption.keyStoreName }}.jks
   ENCRYPTION_TRUSTSTORE_NAME: {{ .Values.encryption.trustStoreName }}.jks
+{{- if (eq (include "isHighSecurityEnabled" .) "true") }}
+  HIGH_SECURITY_ENABLED: {{ true | quote }}
 {{- end }}
 {{- end }}
 {{- if .Values.server.jmx_enabled }}
