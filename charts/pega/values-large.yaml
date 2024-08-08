@@ -3,6 +3,9 @@ global:
   # This values.yaml file is an example.  For more information about
   # each configuration option, see the project readme.
 
+  # Enable it for complying with NIST SP 800-53 and NIST SP 800-131
+  highlySecuredCryptoModeEnabled: false
+
   # Enter your Kubernetes provider.
   provider: "YOUR_KUBERNETES_PROVIDER"
 
@@ -643,9 +646,6 @@ hazelcast:
 
   encryption:
     enabled: false
-    highSecurityEnabled: false
-    keyStoreName: "cluster-keystore"
-    trustStoreName: "cluster-truststore"
 
   # Setting related to Hazelcast migration.
   migration:

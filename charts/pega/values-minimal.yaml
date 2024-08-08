@@ -4,6 +4,9 @@ global:
   # deployment configuration.  For more information about
   # configuration options, see the project readme.
 
+  # Enable it for complying with NIST SP 800-53 and NIST SP 800-131
+  highlySecuredCryptoModeEnabled: false
+
   # Enter your Kubernetes provider.
   provider: "k8s"
 
@@ -247,9 +250,6 @@ hazelcast:
 
   encryption:
     enabled: false
-    highSecurityEnabled: false
-    keyStoreName: "cluster-keystore"
-    trustStoreName: "cluster-truststore"
 
   # Setting related to Hazelcast migration.
   migration:

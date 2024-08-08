@@ -37,8 +37,8 @@
   {{- end -}}
 {{- end -}}
 
-{{- define "isHighSecurityEnabled" }}
-  {{- if and ( .Values.encryption.enabled ) ( .Values.encryption.highSecurityEnabled) -}}
+{{- define "isHZHighlySecuredCryptoModeEnabled" }}
+  {{- if and ( .Values.encryption.enabled ) ( .Values.global.highlySecuredCryptoModeEnabled) -}}
    true
   {{- else -}}
    false

@@ -515,8 +515,8 @@ servicePort: use-annotation
   {{- end -}}
 {{- end -}}
 
-{{- define "isHzHighSecurityEnabled" }}
-  {{- if and .Values.hazelcast.encryption.enabled  .Values.hazelcast.encryption.highSecurityEnabled -}}
+{{- define "isHighlySecuredCryptoModeEnabled" }}
+  {{- if and .Values.hazelcast.encryption.enabled  .Values.global.highlySecuredCryptoModeEnabled -}}
     true
   {{- else -}}
     false

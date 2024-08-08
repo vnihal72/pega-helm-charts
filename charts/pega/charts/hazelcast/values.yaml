@@ -13,9 +13,6 @@ clusteringServiceEnabled: false
 
 encryption:
   enabled: false
-  highSecurityEnabled: false
-  keyStoreName: "cluster-keystore"
-  trustStoreName: "cluster-truststore"
 
 # Setting related to Hazelcast migration.
 migration:
