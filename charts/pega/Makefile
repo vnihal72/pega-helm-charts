@@ -1,6 +1,4 @@
-default: test
-
-test:secrets
+default: secrets
 
 NAMESPACE := <YOUR_NAMESPACE>
 CLUSTERING_SERVICE_IMAGE := <CLUSTERING_SERVICE_IMAGE>
