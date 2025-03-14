@@ -72,6 +72,9 @@ global:
     rulesSchema: "YOUR_RULES_SCHEMA"
     dataSchema: "YOUR_DATA_SCHEMA"
     customerDataSchema: ""
+    dataGridMaxConnection: 5
+    dataGridMinIdle: 2
+    dataGridMaxIdle: 3
 
   customArtifactory:
     # If you use a secured custom artifactory to manager your JDBC driver,

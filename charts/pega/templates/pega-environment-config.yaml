@@ -62,6 +62,20 @@ data:
   # CustomerData schema of the Pega installation
   CUSTOMERDATA_SCHEMA: {{ .Values.global.jdbc.customerDataSchema }}
 {{- end }}
+
+{{- if .Values.global.jdbc.dataGridMaxConnection }}
+  # DataGrid DB max connection
+  DATAGRID_MAX_TOTAL: {{ .Values.global.jdbc.dataGridMaxConnection }}
+{{- end }}
+{{- if .Values.global.jdbc.dataGridMinIdle }}
+  # DataGrid DB min idle connection
+  DATAGRID_MIN_IDLE: {{ .Values.global.jdbc.dataGridMinIdle }}
+{{- end }}
+{{- if .Values.global.jdbc.dataGridMaxIdle }}
+  # DataGrid DB max idle connection
+  DATAGRID_MAX_IDLE: {{ .Values.global.jdbc.dataGridMaxIdle }}
+{{- end }}
+
 {{- if .Values.global.heapDumpPath }}
   # Custom value for HeapDumpPath
   HEAP_DUMP_PATH: {{ .Values.global.heapDumpPath }}
